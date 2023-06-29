@@ -35,6 +35,7 @@ export function CreateForm () {
                 toast({
                     title: "Listing Created!",
                 })
+                Router.refresh()
                 Router.push('/dashboard/properties')
             })
             .catch(() => {
