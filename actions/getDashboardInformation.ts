@@ -2,6 +2,7 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "../pages/api/auth/[...nextauth]";
 import prisma from "@/libs/prismadb";
 import getCurrentUser from "./getCurrentUser";
+import { Listing } from "@prisma/client";
 
 export default async function getDashboardInfo() {
     try {
@@ -20,7 +21,7 @@ export default async function getDashboardInfo() {
         const usersCount = await prisma.user.count();
         const propertiesCount = await prisma.listing.count();
 
-        const safeProperties = properties.map((property) => ({
+        const safeProperties = properties.map((property:Listing) => ({
             ...property,
             createdAt: property.createdAt.toISOString(),
         }));
