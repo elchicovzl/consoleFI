@@ -24,6 +24,7 @@ const defaultValues: Partial<PropertyFormValues> = {
 
 export function CreateForm () {
     const [isLoading, setIsLoading] = useState(false);
+    const [images, setImages] = useState<Array<string> | undefined>([]);
     const Router = useRouter();
 
     function onSubmit(data: PropertyFormValues) {
@@ -54,6 +55,8 @@ export function CreateForm () {
             onSubmit={onSubmit}
             isLoading={isLoading}
             isEdit={false}
+            images={images ?? []}
+            setImages={setImages}
         />
     );
 }

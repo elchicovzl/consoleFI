@@ -22,7 +22,7 @@ const EditForm: React.FC<EditFormProps> = ({
     listing,
     currentUser
 }) => {
-    const data: PropertyFormValues = listing;
+    const data: any | undefined = listing;
     const [isLoading, setIsLoading] = useState(false);
     const [images, setImages] = useState<Array<string> | undefined>(data.imageMultipleSrc);
 
@@ -31,7 +31,7 @@ const EditForm: React.FC<EditFormProps> = ({
     function onSubmit(data: PropertyFormValues) {
       setIsLoading(true);
 
-      data.imageMultipleSrc = [...data.imageMultipleSrc, ...images];
+      data.imageMultipleSrc = [...data.imageMultipleSrc ?? [], ...images ?? []];
       
       axios.put(`/api/listings/${listing.id}/edit`, data)
           .then(() => {
@@ -67,7 +67,7 @@ const EditForm: React.FC<EditFormProps> = ({
             onSubmit={onSubmit}
             isLoading={isLoading}
             isEdit={true}
-            images={images}
+            images={images ?? []}
             setImages={setImages}
         />
     )  

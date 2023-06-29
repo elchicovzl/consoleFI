@@ -17,29 +17,11 @@ registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview);
 interface ImageUploadMultipleProps {
     onChange: (value: any) => void;
     value: any;
-    token: string;
-    successCallback: (value: string) => void;
-    errorCallback: (value: string) => void;
-    fieldName: string;
-    file: any;
-    load: (value: string) => void;
-    error: (value: string) => void;
-    progress: (value: string) => void;
-    abort: (value: string) => void;
 }
 
 const ImageUploadMultiple: React.FC<ImageUploadMultipleProps> = ({
     onChange,
-    value,
-    token,
-    successCallback,
-    errorCallback,
-    fieldName,
-    file,
-    load,
-    error,
-    progress,
-    abort,
+    value
 }) => {
 
     const [files, setFiles] = useState(value);

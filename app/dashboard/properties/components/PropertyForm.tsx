@@ -84,24 +84,26 @@ const PropertyForm = ({ propertyFormValues, onSubmit, isLoading, isEdit, images,
     const removeImage = (index:number) => {
         if (index > -1) {
             const removed = [];
-            removed.push(images[index]);
-            images?.slice(index, 1);
-            
-            setImagesRemove(removed);
-            setImages(images?.filter((img, i) => i !== index));
-            //form.setValue("imageMultipleSrc", images?.filter((img, i) => i !== index));
+            if (images != undefined) {
+                removed.push(images[index]);
+                images?.slice(index, 1);
+                setImagesRemove(removed);
+                setImages(images?.filter((img, i) => i !== index));
+            }
         }
     };
 
     const destroyImages = () => {
-        if (imagesRemove?.length > 0) {
-            imagesRemove?.map(img => {
-                destroyImageRequest({
-                    img,
-                    successCallback: () => {},
-                    errorCallback: () => {},
-                });
-            })
+        if (imagesRemove != undefined) {
+            if (imagesRemove.length  > 0) {
+                imagesRemove?.map(img => {
+                    destroyImageRequest({
+                        img,
+                        successCallback: () => {},
+                        errorCallback: () => {},
+                    });
+                })
+            }
         }
     } 
 
@@ -212,7 +214,7 @@ const PropertyForm = ({ propertyFormValues, onSubmit, isLoading, isEdit, images,
                                 <FormItem className="mb-3 w-1/3 px-2">
                                     <FormLabel></FormLabel>
                                     <FormControl>
-                                        <Counter title="Rooms" subtitle="number of rooms" onChange={field.onChange} value={field.value} />
+                                        <Counter title="Rooms" subtitle="number of rooms" onChange={field.onChange} value={field.value ?? 0} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -226,7 +228,7 @@ const PropertyForm = ({ propertyFormValues, onSubmit, isLoading, isEdit, images,
                                 <FormItem className="mb-3 w-1/3 px-2">
                                     <FormLabel></FormLabel>
                                     <FormControl>
-                                    <Counter title="Bathrooms" subtitle="number of bathrooms" onChange={field.onChange} value={field.value} />
+                                    <Counter title="Bathrooms" subtitle="number of bathrooms" onChange={field.onChange} value={field.value ?? 0} />
             
                                     </FormControl>
                                     <FormMessage />
@@ -241,7 +243,7 @@ const PropertyForm = ({ propertyFormValues, onSubmit, isLoading, isEdit, images,
                                 <FormItem className="mb-3 w-1/3 px-2">
                                     <FormLabel></FormLabel>
                                     <FormControl>
-                                    <Counter title="Parking" subtitle="number of parking" onChange={field.onChange} value={field.value} />
+                                    <Counter title="Parking" subtitle="number of parking" onChange={field.onChange} value={field.value ?? 0} />
             
                                     </FormControl>
                                     <FormMessage />
@@ -257,7 +259,7 @@ const PropertyForm = ({ propertyFormValues, onSubmit, isLoading, isEdit, images,
                                 <FormItem className="mb-3 w-1/3 px-2">
                                     <FormLabel></FormLabel>
                                     <FormControl>
-                                    <Counter title="Floor" subtitle="number of floor" onChange={field.onChange} value={field.value} />
+                                    <Counter title="Floor" subtitle="number of floor" onChange={field.onChange} value={field.value ?? 0} />
             
                                     </FormControl>
                                     <FormMessage />
@@ -272,7 +274,7 @@ const PropertyForm = ({ propertyFormValues, onSubmit, isLoading, isEdit, images,
                                 <FormItem className="mb-3 w-1/3 px-2">
                                     <FormLabel></FormLabel>
                                     <FormControl>
-                                    <Counter title="Stratum" subtitle="number of stratum" onChange={field.onChange} value={field.value} />
+                                    <Counter title="Stratum" subtitle="number of stratum" onChange={field.onChange} value={field.value ?? 0} />
             
                                     </FormControl>
                                     <FormMessage />
@@ -358,10 +360,6 @@ const PropertyForm = ({ propertyFormValues, onSubmit, isLoading, isEdit, images,
                         </div>
                     )}
                     
-                    
-
-                    
-
                     <FormField
                         control={form.control}
                         name="imageMultipleSrc"
@@ -369,13 +367,12 @@ const PropertyForm = ({ propertyFormValues, onSubmit, isLoading, isEdit, images,
                             <FormItem className="mb-3">
                                 <FormLabel className="text-sm">Images for gallery</FormLabel>
                                 <FormControl>
-                                <ImageUploadMultiple onChange={field.onChange}  value={ field.value } />
+                                <ImageUploadMultiple onChange={field.onChange}  value={ field.value ?? []} />
                                 </FormControl>
                                 <FormMessage />
                             </FormItem>
                         )}
                     />
-
 
                     <FormField
                         control={form.control}

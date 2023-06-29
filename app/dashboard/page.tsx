@@ -8,7 +8,7 @@ export default async function Dashboard() {
         safeProperties, 
         usersCount,
         propertiesCount
-    } = await getDashboardInfo();
+    } : any = await getDashboardInfo();
 
     return (
         <div className="flex-1 space-y-4 pt-6">
