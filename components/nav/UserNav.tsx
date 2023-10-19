@@ -47,19 +47,19 @@ const UserNav: React.FC<UserNavProps> = ({
             <DropdownMenuGroup>
                 <DropdownMenuItem disabled={true}>
                     <User className="mr-2 h-4 w-4" />
-                    <span>Profile</span>
+                    <span>Perfil</span>
                     <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
                 </DropdownMenuItem>
                 <DropdownMenuItem disabled={true}>
                     <PlusCircle className="mr-2 h-4 w-4" />
-                    <span>New User</span>
+                    <span>Nuevo usuario</span>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem
                     onClick={() => signOut()}
                 >
                     <LogOut className="mr-2 h-4 w-4" />
-                    <span>Log out</span>
+                    <span>Cerrar sessión</span>
                     <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
                 </DropdownMenuItem>
             </DropdownMenuGroup>

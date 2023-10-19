@@ -36,7 +36,7 @@ export const columns: ColumnDef<SafeUser>[] = [
   {
     accessorKey: "email",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Email" />
+      <DataTableColumnHeader column={column} title="Correo" />
     ),
     cell: ({ row }) => <div className="w-[80px]">{row.getValue("email")}</div>,
     enableSorting: false,
@@ -45,7 +45,7 @@ export const columns: ColumnDef<SafeUser>[] = [
   {
     accessorKey: "name",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Name" />
+      <DataTableColumnHeader column={column} title="Nombre" />
     ),
     cell: ({ row }) => {
       //const label = labels.find((label) => label.value === row.original.name)
@@ -63,7 +63,7 @@ export const columns: ColumnDef<SafeUser>[] = [
   {
     accessorKey: "role",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Role" />
+      <DataTableColumnHeader column={column} title="Rol" />
     ),
     cell: ({ row }) => {
       //const label = labels.find((label) => label.value === row.original.name)

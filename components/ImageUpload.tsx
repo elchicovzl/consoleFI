@@ -57,7 +57,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
               size={50}
             />
             <div className="font-semibold text-lg">
-              Click to upload
+              Click para subir archivo
             </div>
             {value && (
               <div className="
@@ -66,7 +66,8 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
                   fill 
                   style={{ objectFit: 'cover' }} 
                   src={value} 
-                  alt="House" 
+                  alt="House"
+                  overlays={[{"url":"https://static.wixstatic.com/media/222189_a2e1ead1a33543388c69e4104374aa44~mv2.png/v1/fill/w_511,h_319,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/222189_a2e1ead1a33543388c69e4104374aa44~mv2.png"}]}
                 />
               </div>
             )}

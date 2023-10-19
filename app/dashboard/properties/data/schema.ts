@@ -47,13 +47,13 @@ export const propertyFormSchema = z.object({
   title: z
   .string()
   .min(2, {
-      message: "Username must be at least 2 characters.",
+      message: "Titulo debe tener almenos dos caracteres.",
   }),
   code: z.string(),
   address: z.string(),
   price: z
   .coerce.number().min(1, {
-      message: "Price must be greater than 0"
+      message: "El precio debe ser mayor a 0"
   }).default(1),
   administration: z
   .coerce.number().default(0).optional(),

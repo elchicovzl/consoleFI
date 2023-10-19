@@ -34,7 +34,7 @@ export const columns: ColumnDef<SafeUser>[] = [
   {
     accessorKey: "title",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Title" />
+      <DataTableColumnHeader column={column} title="Título" />
     ),
     cell: ({ row }) => <div className="w-[200px]">{row.getValue("title")}</div>,
     enableSorting: false,
@@ -43,7 +43,7 @@ export const columns: ColumnDef<SafeUser>[] = [
   {
     accessorKey: "typeListing",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Type" />
+      <DataTableColumnHeader column={column} title="Tipo propiedad" />
     ),
     cell: ({ row }) => {
       //const label = labels.find((label) => label.value === row.original.name)
@@ -61,7 +61,7 @@ export const columns: ColumnDef<SafeUser>[] = [
   {
     accessorKey: "price",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Price" />
+      <DataTableColumnHeader column={column} title="Precio" />
     ),
     cell: ({ row }) => {
       //const label = labels.find((label) => label.value === row.original.name)
@@ -84,7 +84,7 @@ export const columns: ColumnDef<SafeUser>[] = [
   {
     accessorKey: "state",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="Status" />
+      <DataTableColumnHeader column={column} title="Estatus" />
     ),
     cell: ({ row }) => {
       const status = statuses.find(
@@ -163,7 +163,7 @@ export const columns: ColumnDef<SafeUser>[] = [
     },
   }, */
   {
-    id: "actions",
+    id: "Acciones",
     cell: ({ row }) => <DataTableRowActions row={row} />,
   },
 ]

@@ -15,25 +15,25 @@ export function MainNav({
           href="dashboard"
           className="text-sm font-medium transition-colors hover:text-primary"
         >
-          Overview
+          Resumen general
         </Link>
         <Link
           href="/dashboard/subscriptions"
           className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
         >
-          Subscriptions
+          Subscripciones
         </Link>
         <Link
           href="/dashboard/users"
           className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
         >
-          Users
+          Usuarios
         </Link>
         <Link
           href="/dashboard/properties"
           className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
         >
-          Properties
+          Propiedades
         </Link>
       </nav>
     )

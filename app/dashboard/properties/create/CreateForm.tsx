@@ -33,7 +33,7 @@ export function CreateForm () {
         axios.post('/api/listings', data)
             .then(() => {
                 toast({
-                    title: "Listing Created!",
+                    title: "Propiedad creada!",
                 })
                 Router.refresh()
                 Router.push('/dashboard/properties')
@@ -41,8 +41,8 @@ export function CreateForm () {
             .catch(() => {
                 toast({
                     variant: "destructive",
-                    title: "Uh oh! Something went wrong.",
-                    description: "There was a problem with your request.",
+                    title: "Algo salió mal.",
+                    description: "Hay un problema con la petición.",
                 })
                 //Router.push('/dashboard/properties')
             }).finally(() => {

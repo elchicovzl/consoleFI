@@ -56,7 +56,7 @@ const UserForm = ({ propertyFormValues, onSubmit, isLoading, isEdit}: UserFormPr
                             name="name"
                             render={({ field }) => (
                                 <FormItem className="mb-3 w-1/2 px-2">
-                                    <FormLabel>Name</FormLabel>
+                                    <FormLabel>Nombre</FormLabel>
                                     <FormControl>
                                         <Input placeholder="name.." {...field} />  
                                     </FormControl>
@@ -69,9 +69,9 @@ const UserForm = ({ propertyFormValues, onSubmit, isLoading, isEdit}: UserFormPr
                             name="email"
                             render={({ field }) => (
                                 <FormItem className="mb-3 w-1/2 px-2">
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>Correo eléctronico</FormLabel>
                                     <FormControl>
-                                        <Input placeholder="email.." {...field} />  
+                                        <Input placeholder="correo eléctronico.." {...field} />  
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -84,7 +84,7 @@ const UserForm = ({ propertyFormValues, onSubmit, isLoading, isEdit}: UserFormPr
                             name="password"
                             render={({ field }) => (
                                 <FormItem className="mb-3 w-1/2 px-2">
-                                    <FormLabel>Password</FormLabel>
+                                    <FormLabel>Contraseña</FormLabel>
                                     <FormControl>
                                         <Input type="password" placeholder="" {...field} />  
                                     </FormControl>
@@ -97,7 +97,7 @@ const UserForm = ({ propertyFormValues, onSubmit, isLoading, isEdit}: UserFormPr
                             name="confirmPassword"
                             render={({ field }) => (
                                 <FormItem className="mb-3 w-1/2 px-2">
-                                    <FormLabel>Confirm password</FormLabel>
+                                    <FormLabel>Confirmar contraseña</FormLabel>
                                     <FormControl>
                                         <Input type="password" placeholder="    " {...field} />  
                                     </FormControl>
@@ -112,7 +112,7 @@ const UserForm = ({ propertyFormValues, onSubmit, isLoading, isEdit}: UserFormPr
                             name="role"
                             render={({ field }) => (
                                 <FormItem className="mb-3 w-1/2 px-2">
-                                    <FormLabel>Role</FormLabel>
+                                    <FormLabel>Rol</FormLabel>
                                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                                         <FormControl>
                                         <SelectTrigger>
@@ -120,8 +120,8 @@ const UserForm = ({ propertyFormValues, onSubmit, isLoading, isEdit}: UserFormPr
                                         </SelectTrigger>
                                         </FormControl>
                                         <SelectContent>
-                                            <SelectItem value="Admin">Admin</SelectItem>
-                                            <SelectItem value="Publisher">Publisher</SelectItem>
+                                            <SelectItem value="Admin">Administrador</SelectItem>
+                                            <SelectItem value="Publisher">Publicador</SelectItem>
                                         </SelectContent>
                                     </Select>
                                     <FormMessage />
@@ -134,7 +134,7 @@ const UserForm = ({ propertyFormValues, onSubmit, isLoading, isEdit}: UserFormPr
                             <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                         )}
                         
-                        {isEdit ? 'Edit' : 'Create'} user
+                        {isEdit ? 'Editar' : 'Crear'} usuario
                     </Button>
                 </form>
             </Form>

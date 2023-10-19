@@ -32,6 +32,10 @@ const EditForm: React.FC<EditFormProps> = ({
       setIsLoading(true);
 
       data.imageMultipleSrc = [...data.imageMultipleSrc ?? [], ...images ?? []];
+
+      data.imageMultipleSrc = data.imageMultipleSrc.map((image) =>
+        image.replace('http://','https://')
+      );
       
       axios.put(`/api/listings/${listing.id}/edit`, data)
           .then(() => {

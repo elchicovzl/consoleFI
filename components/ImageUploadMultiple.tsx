@@ -37,12 +37,6 @@ const ImageUploadMultiple: React.FC<ImageUploadMultipleProps> = ({
       }, [onChange, value]);
 
       const handleUploadRevert = useCallback(() => {
-        /* if (value != undefined) {
-            value.push(result.url)
-            onChange(value);
-        }else {
-            onChange([result.url]);
-        } */
         
       }, [onChange, value]);
     
@@ -84,8 +78,6 @@ const ImageUploadMultiple: React.FC<ImageUploadMultipleProps> = ({
         };
     };
 
-
-
     return (
         <div style={{ width: "80%", margin: "auto", padding: "1%" }}>
             <FilePond
@@ -95,7 +87,7 @@ const ImageUploadMultiple: React.FC<ImageUploadMultipleProps> = ({
                 allowMultiple={true}
                 server={{ process, revert }}
                 name="file"
-                labelIdle='Drag & Drop your files or <span class="filepond--label-action">Browse</span>'
+                labelIdle='Arrastra y suelta tus archivos o <span class="filepond--label-action">Navegar tu directorio</span>'
                 allowRevert={false}
             />
         </div>

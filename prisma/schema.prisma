@@ -15,6 +15,7 @@ enum Enum_Rol {
   SuperAdmin
   Admin
   Publisher
+  Subscriptor
 }
 
 enum Enum_UserState {
@@ -54,7 +55,7 @@ model User {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   favoriteIds String[] @db.ObjectId
-  role Enum_Rol @default(Publisher)
+  role Enum_Rol @default(Subscriptor)
   state Enum_UserState @default(Pending)
 
   accounts Account[]
@@ -121,4 +122,13 @@ model Reservation {
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
   listing Listing @relation(fields: [listingId], references: [id], onDelete: Cascade)
+}
+
+model Contact {
+  id String @id @default(auto()) @map("_id") @db.ObjectId
+  email String
+  name String
+  message String
+
+  createdAt DateTime @default(now())
 }
