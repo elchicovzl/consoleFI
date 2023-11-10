@@ -34,6 +34,10 @@ export const authOptions: AuthOptions = {
                     throw new Error('Invalid credentials');
                 }
 
+                if (!user?.role || user?.role == "Subscriptor") {
+                    throw new Error('Invalid credentials');
+                }
+
                 const isCorrectPassword = await bcrypt.compare(
                     credentials.password,
                     user.hashedPassword
