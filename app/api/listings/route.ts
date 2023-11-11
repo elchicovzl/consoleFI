@@ -43,6 +43,10 @@ export async function POST(
           NextResponse.error();
         }
       });
+
+      let imageMultiple = imageMultipleSrc.map((image:string) =>
+        image.replace('http://','https://')
+      );
     
       const listing = await prisma.listing.create({
         data: {
@@ -60,7 +64,7 @@ export async function POST(
           parking,
           stratum,
           area,
-          imageMultipleSrc,
+          imageMultipleSrc: imageMultiple,
           floor,
           administration,
           typeListing,
