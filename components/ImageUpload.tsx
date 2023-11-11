@@ -1,6 +1,8 @@
 'use client';
 
 import { CldUploadWidget, CldImage } from "next-cloudinary";
+import { cloudName, uploadPreset, apiKey, apiSecret } from "../cloudinary/cloudinaryConfig";
+
 import Image from "next/image";
 import { useCallback } from "react";
 import { TbPhotoPlus } from 'react-icons/tb'
@@ -8,8 +10,6 @@ import { TbPhotoPlus } from 'react-icons/tb'
 declare global {
   var cloudinary: any
 }
-
-const uploadPreset = "wudsun8m";
 
 interface ImageUploadProps {
   onChange: (value: string) => void;
