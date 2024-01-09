@@ -29,6 +29,7 @@ enum Enum_StateListing {
   Pending
   Expired
   Sold
+  Deleted
 }
 
 enum Enum_TypeListing {

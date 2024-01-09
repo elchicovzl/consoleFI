@@ -478,6 +478,7 @@ const PropertyForm = ({ propertyFormValues, onSubmit, isLoading, isEdit, images,
                                             <SelectItem value="Pending">Pendiente</SelectItem>
                                             <SelectItem value="Expired">Expirado</SelectItem>
                                             <SelectItem value="Sold">Vendido</SelectItem>
+                                            <SelectItem value="Deleted">Eliminado</SelectItem>
                                         </SelectContent>
                                     </Select>
                                     <FormDescription className="text-xs">

@@ -8,7 +8,8 @@ const Enum_StateListing = {
   Active: "Active",
   Pending: "Pending",
   Expired: "Expired",
-  Sold: "Sold"
+  Sold: "Sold",
+  Deleted: "Deleted"
 } as const
 
 const states = z.nativeEnum(Enum_StateListing).nullish();
@@ -68,7 +69,7 @@ export const propertyFormSchema = z.object({
   floor: z.coerce.number().default(0).optional(),
   stratum: z.coerce.number().default(0).optional(),
   imageSrc: z.string().optional(),
-  antique: z.string().optional(),
+  antique: z.string().nullish(),
   imageMultipleSrc: z.array(z.string()).optional(),
   locationValue: z.array(z.number()).optional(),
   typeListing: z.string().optional(),

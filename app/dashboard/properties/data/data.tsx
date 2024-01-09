@@ -50,6 +50,11 @@ import {
       label: "Sold",
       icon: XCircle,
     },
+    {
+      value: "Deleted",
+      label: "Deleted",
+      icon: XCircle,
+    },
   ]
   
   export const priorities = [

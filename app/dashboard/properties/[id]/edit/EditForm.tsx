@@ -40,7 +40,7 @@ const EditForm: React.FC<EditFormProps> = ({
       axios.put(`/api/listings/${listing.id}/edit`, data)
           .then(() => {
              toast({
-                  title: "Listing Updated!",
+                  title: "Propiedad Actualizada!",
                   
                   /* description: (
                   <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
